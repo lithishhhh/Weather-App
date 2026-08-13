@@ -20,6 +20,7 @@ function Weather(){
     function handlecity(evt){
         setcity(evt.target.value)
         console.log(city)
+        
     }
 
     function getWeather(){
@@ -33,6 +34,7 @@ function Weather(){
             setpress(success.data.main.pressure)
             sethum(success.data.main.humidity)
             setloc(success.data.name)
+             setcity("")
             setdeg(success.data.clouds.all)
             setwinds(success.data.wind.speed)
         });
@@ -59,6 +61,7 @@ function Weather(){
             <input onChange={handlecity}
               type="text"
               placeholder="Enter your city name..."
+              value={city}
             />
 
             <button onClick={getWeather}>
